@@ -9,14 +9,9 @@ export default function RootUi() {
   return (
     <>
     
-    <div className="blur">
-  <img src="https://picsum.photos/1920/680?image=1039" alt="" />
-  <span
-    className="blurry"
-    style={{
-      backgroundImage: "url(https://picsum.photos/1920/680?image=1039)"
-    }}
-  />
+    <div className="blur ">
+  <img src={require("./copy-2.jpg")} alt=""/>
+  <img src={require("./copy.jpg")} alt='' className="blurry"/>
   <div className="overlay">
     <div className="flex">
       <h2>Lorem ipsum dolor sit amet dolor ipsum</h2>
