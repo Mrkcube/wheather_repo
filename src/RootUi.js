@@ -1,28 +1,39 @@
 import React from 'react'
 import "./index.css"
-import { Button, Modal } from 'antd';
-import { useState } from 'react';
+import { Button } from 'antd';
+import {Box} from '@mui/material';
+import Container from '@mui/material/Container';
 
 
 export default function RootUi() {
-  const [modal2Open, setModal2Open] = useState(false);
   return (
-    <div className='main'>
-      <Button type="primary" onClick={() => setModal2Open(true)} className='Explorebtn'>
-        Explore
-      </Button>
-      <Modal
-        title="Vertically centered modal dialog"
-        centered
-        open={modal2Open}
-        onOk={() => setModal2Open(false)}
-        onCancel={() => setModal2Open(false)}
-      >
-        <p>hello guys</p>
-        <p>some contents...</p>
-        <p>some contents...</p>
-      </Modal>
+    <>
+    
+    <div className="blur">
+  <img src="https://picsum.photos/1920/680?image=1039" alt="" />
+  <span
+    className="blurry"
+    style={{
+      backgroundImage: "url(https://picsum.photos/1920/680?image=1039)"
+    }}
+  />
+  <div className="overlay">
+    <div className="flex">
+      <h2>Lorem ipsum dolor sit amet dolor ipsum</h2>
+      <p>
+        Powerful water infrastructure data analytics and data modelling software
+        from Innovyze means you can integrate model assets into a real-time
+        environment to support operational decisions
+      </p>
     </div>
+  </div>
+</div>
+
+
+
+
+      
+    </>
   );
 };
 
