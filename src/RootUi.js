@@ -18,7 +18,7 @@ export default function RootUi() {
         onOk={() => setModal2Open(false)}
         onCancel={() => setModal2Open(false)}
       >
-        <p>some contents...</p>
+        <p>hello guys</p>
         <p>some contents...</p>
         <p>some contents...</p>
       </Modal>
