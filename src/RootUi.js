@@ -30,9 +30,7 @@ export default function RootUi() {
       <div className="blur ">
         <div>
           <img src={require("./copy-2.jpg")} alt="" />
-          <a className="btn btn-primary" href="/">
-            Explore
-          </a>
+          
         </div>
         <img src={require("./copy.jpg")} alt="" className="blurry" />
         <div className="overlay">
@@ -43,7 +41,7 @@ export default function RootUi() {
               backgroundColor: "rgb(2 ,4 ,19 ,0.3)",
             }}
           >
-            <div>
+            <div  className="d-flex align-items-center">
               <p style={{ fontSize: "x-large" }}>{date.toDateString()} </p>
             </div>
 
