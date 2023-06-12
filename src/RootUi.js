@@ -9,6 +9,7 @@ import Icons from "./Icons";
 export default function RootUi() {
   // Defining....
   const [date, setDate] = useState(new Date());
+  
 
   // console.log(date.toLocaleTimeString())
   // console.log(city)
@@ -41,12 +42,10 @@ export default function RootUi() {
               backgroundColor: "rgb(2 ,4 ,19 ,0.3)",
             }}
           >
-            <div  className="d-flex align-items-center">
-              <p style={{ fontSize: "x-large" }}>{date.toDateString()} </p>
-            </div>
-
+           
             <Icons/>
 
+            <p style={{ fontSize: "x-large" }} className="Date">{date.toDateString()} </p>
 
             <p className="timer">{date.toLocaleTimeString()}</p>
             

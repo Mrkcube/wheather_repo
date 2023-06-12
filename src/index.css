@@ -66,8 +66,23 @@ img {
   position: absolute;
   bottom: 40px;
   font-family:Arial, Helvetica, sans-serif;
-  font-size:x-large;
+  font-size:large;
   left: 150px;
+}
+
+.Date{
+  position: absolute;
+  bottom: 90px;
+  left: 150px;
+  font-family:Arial, Helvetica, sans-serif;
+}
+
+.cityname{
+  display: flex;
+  margin-left: 3em;
+  margin-top: 0;
+  margin-bottom: 3em;
+  font-size: 1em;
 }
 
 /* ---------Imported------------- */
