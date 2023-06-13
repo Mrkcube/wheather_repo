@@ -3,6 +3,7 @@ import axios from "axios";
 import "./index.css";
 import Search from "antd/es/input/Search";
 import { Card, CardHeader } from "@mui/material";
+import "./index.css"
 
 export default function Icons() {
   // console.log(cityData)
@@ -40,8 +41,8 @@ export default function Icons() {
   return (
     <>
       <div className="d-flex align-items-center m-4 mb-0 justify-content-around">
-      <p>
-        {cityName?.name} , {cityName?.state} , <br /> {cityName?.country}
+      <p className="location">
+        {cityName?.name}  {cityName?.state ? `, ${cityName?.state}` : " "} , <br /> {cityName?.country}
       </p>
         <svg xmlns="http://www.w3.org/2000/svg" width="0" height="0">
           <defs>
@@ -210,12 +211,11 @@ export default function Icons() {
           </symbol>
         </svg>
 
-        <Card sx={{ backgroundColor: "inherit", border: "2px solid white",alignContent:"center",height:"160px"}}>
+        <Card sx={{ backgroundColor: "inherit", border: "2px solid white",alignContent:"center",height:"160px"}} className="card">
           <CardHeader
-            sx={{ backgroundColor: "white" }}
+            sx={{ backgroundColor: "white",height:"80px" }}
             title={cityData?.description}
           />
-
           {cityData?.icon === "02d" ? (
             <>
               <div className="d-flex justify-content-end mx-4">
@@ -505,6 +505,7 @@ export default function Icons() {
           ) : (
             ""
           )}
+          
         </Card>
       </div>
 
@@ -517,6 +518,7 @@ export default function Icons() {
           allowClear
           onSearch={(e) => searchCity(e)}
           style={{ width: 300, opacity: 0.4,marginTop:"10px" }}
+          className="input"
         />
       </div>
     </>

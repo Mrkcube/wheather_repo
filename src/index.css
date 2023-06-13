@@ -35,7 +35,8 @@ justify-content:center;
 img {
 	display: block;
 	width: 45%;
-    height: 100vh;
+  height: 100vh;
+    
 }
 
 .overlay {
@@ -85,11 +86,42 @@ img {
   font-size: 1em;
 }
 
-@media screen and (max-width : 750px) {
-  .blur {
-    display: none;
+@media screen and (max-width :700px) {
+  .blurry{
+    width: 100%;
   }
+  .overlay{
+    width: 100%;
+  }
+  .box{
+position: absolute;
+left: 0;
+  }
+
+  .card{
+position: absolute;
+left: 15%;
+height: 200px;
+width: 150px;
+top: 20%;
 }
+
+.input{
+position: absolute;
+left:10px;
+top: 55%;
+}
+
+.location{
+position: absolute;
+top: 20px;
+left: 40px;
+}
+
+
+}
+
+
 
 /* ---------Imported------------- */
 

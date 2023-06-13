@@ -30,8 +30,7 @@ export default function RootUi() {
     <>
       <div className="blur ">
         <div>
-          <img src={require("./copy-2.jpg")} alt="" />
-          
+          <img src={require("./copy-2.jpg")} alt="" />          
         </div>
         <img src={require("./copy.jpg")} alt="" className="blurry" />
         <div className="overlay">
@@ -41,9 +40,10 @@ export default function RootUi() {
               height: "90vh",
               backgroundColor: "rgb(2 ,4 ,19 ,0.3)",
             }}
+            className="box"
           >
            
-            <Icons/>
+            <Icons className="icon"/>
 
             <p style={{ fontSize: "x-large" }} className="Date">{date.toDateString()} </p>
 
