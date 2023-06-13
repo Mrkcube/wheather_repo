@@ -14,7 +14,7 @@ export default function Icons() {
   useEffect(() => {
     const getlocation = async () => {
       const receiverData = await axios.get(
-        `http://api.openweathermap.org/geo/1.0/direct?q=${city}&appid=1417023df4aa6f4503d634b21ba083ca`
+        `https://api.openweathermap.org/geo/1.0/direct?q=${city}&appid=1417023df4aa6f4503d634b21ba083ca`
       );
       setCityName(receiverData?.data[0]);
       console.log(receiverData?.data[0]);
