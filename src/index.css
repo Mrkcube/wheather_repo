@@ -85,6 +85,12 @@ img {
   font-size: 1em;
 }
 
+@media screen and (max-width : 750px) {
+  .blur {
+    display: none;
+  }
+}
+
 /* ---------Imported------------- */
 
 
