@@ -312,7 +312,7 @@ export default function Icons() {
           )}
 
           {cityData[0]?.icon === "10d" ? (
-            
+
             <>
               <div className="d-flex justify-content-end mx-4">
                 <figure>
@@ -556,38 +556,9 @@ export default function Icons() {
         />
       </div>
 
-      <TableContainer component={Paper}  className="mt-4">
-      <Table sx={{ minWidth: 300 }} aria-label="simple table" size="small">
-        <TableHead>
-          <TableRow>
-            <TableCell>Dessert (100g serving)</TableCell>
-            <TableCell align="right">Calories</TableCell>
-            <TableCell align="right">Fat&nbsp;(g)</TableCell>
-            <TableCell align="right">Carbs&nbsp;(g)</TableCell>
-            <TableCell align="right">Protein&nbsp;(g)</TableCell>
-          </TableRow>
-        </TableHead>
-        <TableBody>
+      
 
-{/* {Array.isArray(cityData) ? 
 
-          cityData.map((row) => (
-            <TableRow
-              key={row.name}
-              sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
-            >
-              <TableCell component="th" scope="row">
-                {row.description}
-              </TableCell>
-              <TableCell align="right">{row.country}</TableCell>
-              <TableCell align="right">{row.fat}</TableCell>
-              <TableCell align="right">{row.carbs}</TableCell>
-              <TableCell align="right">{row.protein}</TableCell>
-            </TableRow>
-          )) : null} */}
-        </TableBody>
-      </Table>
-    </TableContainer>
 
     </>
   );
