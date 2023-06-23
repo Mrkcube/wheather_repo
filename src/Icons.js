@@ -5,10 +5,18 @@ import Search from "antd/es/input/Search";
 import { Card, CardHeader } from "@mui/material";
 import "./index.css"
 
+import Table from '@mui/material/Table';
+import TableBody from '@mui/material/TableBody';
+import TableCell from '@mui/material/TableCell';
+import TableContainer from '@mui/material/TableContainer';
+import TableHead from '@mui/material/TableHead';
+import TableRow from '@mui/material/TableRow';
+import Paper from '@mui/material/Paper';
+
 export default function Icons() {
   // console.log(cityData)
 
-  const [cityData, setCityData] = useState();
+  const [cityData, setCityData] = useState([]);
   const [city, setCity] = useState(null);
   const [cityName, setCityName] = useState(null);
 
@@ -22,19 +30,44 @@ export default function Icons() {
       try {
         const getWeather = await axios.get(
           `https://api.openweathermap.org/data/2.5/weather?lat=${receiverData.data[0].lat}&lon=${receiverData.data[0].lon}&appid=1417023df4aa6f4503d634b21ba083ca`
-        );
-        setCityData(getWeather?.data?.weather[0]);
-        console.log(cityData);
-      } catch (error) {
-        alert("Enter valid city name");
+          );
+          setCityData(getWeather?.data?.weather);
+          console.log(cityData);
+        } catch (error) {
+          alert("Enter valid city name");
+
       }
     };
     getlocation();
+    // eslint-disable-next-line 
   }, [city]);
+
+// console.log(cityName)
+  useEffect(() => {
+    
+    const fiveDayWeather =async ()=>{
+
+      try {        
+        const response = await axios.get(`https://api.openweathermap.org/data/2.5/forecast?lat=${cityName?.lat}&lon=${cityName?.lon}&appid=1417023df4aa6f4503d634b21ba083ca`)
+        console.log(response.data)
+      } catch (error) {
+        console.log(error)
+      }
+
+    }
+
+    fiveDayWeather()
+  
+  }, [city])
+  
+  
+  // console.log(cityName)
 
   const searchCity = (e) => {
     setCity(e);
   };
+
+  // console.log(cityData)
 
   //   console.log(cityData)
 
@@ -214,9 +247,9 @@ export default function Icons() {
         <Card sx={{ backgroundColor: "inherit", border: "2px solid white",alignContent:"center",height:"160px"}} className="card">
           <CardHeader
             sx={{ backgroundColor: "white",height:"80px" }}
-            title={cityData?.description}
+            title={cityData[0]?.description}
           />
-          {cityData?.icon === "02d" ? (
+          {cityData[0]?.icon === "02d" ? (
             <>
               <div className="d-flex justify-content-end mx-4">
                 <figure>
@@ -236,7 +269,7 @@ export default function Icons() {
             ""
           )}
 
-          {cityData?.icon === "02n" ? (
+          {cityData[0]?.icon === "02n" ? (
             <>
               <div className="d-flex justify-content-end mx-4">
                 <figure>
@@ -256,7 +289,7 @@ export default function Icons() {
             ""
           )}
 
-          {cityData?.icon === "10n" ? (
+          {cityData[0]?.icon === "10n" ? (
             <>
               <div className="d-flex justify-content-end mx-4">
                 <figure>
@@ -278,7 +311,8 @@ export default function Icons() {
             ""
           )}
 
-          {cityData?.icon === "10d" ? (
+          {cityData[0]?.icon === "10d" ? (
+            
             <>
               <div className="d-flex justify-content-end mx-4">
                 <figure>
@@ -300,7 +334,7 @@ export default function Icons() {
             ""
           )}
 
-          {cityData?.icon === "01d" ? (
+          {cityData[0]?.icon === "01d" ? (
             <>
               <div className="d-flex justify-content-end mx-4">
                 <figure>
@@ -314,7 +348,7 @@ export default function Icons() {
             ""
           )}
 
-          {cityData?.icon === "01n" ? (
+          {cityData[0]?.icon === "01n" ? (
             <>
               <div className="d-flex justify-content-end mx-4">
                 <figure>
@@ -346,7 +380,7 @@ export default function Icons() {
             ""
           )}
 
-          {cityData?.icon === "03d" || cityData?.icon === "03n" ? (
+          {cityData[0]?.icon === "03d" || cityData[0]?.icon === "03n" ? (
             <>
               <div className="d-flex justify-content-end mx-4">
                 <figure>
@@ -365,7 +399,7 @@ export default function Icons() {
             ""
           )}
 
-          {cityData?.icon === "04d" || cityData?.icon === "04n" ? (
+          {cityData[0]?.icon === "04d" || cityData[0]?.icon === "04n" ? (
             <>
               <div className="d-flex justify-content-end mx-4">
                 <figure>
@@ -391,7 +425,7 @@ export default function Icons() {
             ""
           )}
 
-          {cityData?.icon === "09d" || cityData?.icon === "09n" ? (
+          {cityData[0]?.icon === "09d" || cityData[0]?.icon === "09n" ? (
             <>
               <div className="d-flex justify-content-end mx-4">
                 <figure>
@@ -421,7 +455,7 @@ export default function Icons() {
             ""
           )}
 
-          {cityData?.icon === "13d" || cityData?.icon === "13n" ? (
+          {cityData[0]?.icon === "13d" || cityData[0]?.icon === "13n" ? (
             <>
               <div className="d-flex justify-content-end mx-4">
                 <figure>
@@ -440,7 +474,7 @@ export default function Icons() {
             ""
           )}
 
-          {cityData?.icon === "50d" || cityData?.icon === "50n" ? (
+          {cityData[0]?.icon === "50d" || cityData[0]?.icon === "50n" ? (
             <>
               <div className="d-flex justify-content-end mx-4">
                 <figure>
@@ -468,7 +502,7 @@ export default function Icons() {
             ""
           )}
 
-          {cityData?.icon === "11d" || cityData?.icon === "11n" ? (
+          {cityData[0]?.icon === "11d" || cityData[0]?.icon === "11n" ? (
             <>
               <div className="d-flex justify-content-end mx-4">
                 <figure>
@@ -514,13 +548,47 @@ export default function Icons() {
 
       <div className="d-flex justify-content-center">
         <Search
-          placeholder="input search text"
+          placeholder="Enter your city"
           allowClear
           onSearch={(e) => searchCity(e)}
           style={{ width: 300, opacity: 0.4,marginTop:"10px" }}
           className="input"
         />
       </div>
+
+      <TableContainer component={Paper}  className="mt-4">
+      <Table sx={{ minWidth: 300 }} aria-label="simple table" size="small">
+        <TableHead>
+          <TableRow>
+            <TableCell>Dessert (100g serving)</TableCell>
+            <TableCell align="right">Calories</TableCell>
+            <TableCell align="right">Fat&nbsp;(g)</TableCell>
+            <TableCell align="right">Carbs&nbsp;(g)</TableCell>
+            <TableCell align="right">Protein&nbsp;(g)</TableCell>
+          </TableRow>
+        </TableHead>
+        <TableBody>
+
+{/* {Array.isArray(cityData) ? 
+
+          cityData.map((row) => (
+            <TableRow
+              key={row.name}
+              sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
+            >
+              <TableCell component="th" scope="row">
+                {row.description}
+              </TableCell>
+              <TableCell align="right">{row.country}</TableCell>
+              <TableCell align="right">{row.fat}</TableCell>
+              <TableCell align="right">{row.carbs}</TableCell>
+              <TableCell align="right">{row.protein}</TableCell>
+            </TableRow>
+          )) : null} */}
+        </TableBody>
+      </Table>
+    </TableContainer>
+
     </>
   );
 }

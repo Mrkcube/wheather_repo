@@ -33,12 +33,13 @@ export default function RootUi() {
           <img src={require("./copy-2.jpg")} alt="" />          
         </div>
         <img src={require("./copy.jpg")} alt="" className="blurry" />
-        <div className="overlay">
+        <div className="overlay " >
           <Box
             sx={{
               width: "100vh",
               height: "90vh",
               backgroundColor: "rgb(2 ,4 ,19 ,0.3)",
+              padding : "20px"
             }}
             className="box"
           >
