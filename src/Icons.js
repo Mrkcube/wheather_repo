@@ -240,7 +240,7 @@ export default function Icons() {
 
         <Card sx={{ backgroundColor: "inherit", border: "2px solid white",alignContent:"center",height:"160px"}} className="card">
           <CardHeader
-            sx={{ backgroundColor: "white",height:"80px" }}
+            sx={{ backgroundColor: "white",height:"75px" }}
             title={cityData[0]?.description}
           />
           {cityData[0]?.icon === "02d" ? (
