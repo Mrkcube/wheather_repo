@@ -242,6 +242,7 @@ export default function Icons() {
           <CardHeader
             sx={{ backgroundColor: "white",height:"75px" }}
             title={cityData[0]?.description}
+            className="cardheader"
           />
           {cityData[0]?.icon === "02d" ? (
             <>
