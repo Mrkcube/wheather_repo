@@ -5,13 +5,7 @@ import Search from "antd/es/input/Search";
 import { Card, CardHeader } from "@mui/material";
 import "./index.css"
 
-import Table from '@mui/material/Table';
-import TableBody from '@mui/material/TableBody';
-import TableCell from '@mui/material/TableCell';
-import TableContainer from '@mui/material/TableContainer';
-import TableHead from '@mui/material/TableHead';
-import TableRow from '@mui/material/TableRow';
-import Paper from '@mui/material/Paper';
+
 
 export default function Icons() {
   // console.log(cityData)
@@ -43,22 +37,22 @@ export default function Icons() {
   }, [city]);
 
 // console.log(cityName)
-  useEffect(() => {
+  // useEffect(() => {
     
-    const fiveDayWeather =async ()=>{
+  //   const fiveDayWeather =async ()=>{
 
-      try {        
-        const response = await axios.get(`https://api.openweathermap.org/data/2.5/forecast?lat=${cityName?.lat}&lon=${cityName?.lon}&appid=1417023df4aa6f4503d634b21ba083ca`)
-        console.log(response.data)
-      } catch (error) {
-        console.log(error)
-      }
+  //     try {        
+  //       const response = await axios.get(`https://api.openweathermap.org/data/2.5/forecast?lat=${cityName?.lat}&lon=${cityName?.lon}&appid=1417023df4aa6f4503d634b21ba083ca`)
+  //       console.log(response.data)
+  //     } catch (error) {
+  //       console.log(error)
+  //     }
 
-    }
+  //   }
 
-    fiveDayWeather()
+  //   fiveDayWeather()
   
-  }, [city])
+  // }, [])
   
   
   // console.log(cityName)
